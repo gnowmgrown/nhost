@@ -1,0 +1,8 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: strip-suffix
+spec:
+  replacePathRegex:
+    regex: ^/v1/storage/(.*)
+    replacement: /v1/$1
